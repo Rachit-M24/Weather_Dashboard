@@ -12,9 +12,6 @@ const Header = () => {
     error: locationError,
   } = useGeoLocation();
   const navigate = useNavigate();
-  const handleLocationClick = () => {
-    navigate(`/location-details?lat=${lat}&lon=${long}&city=${city}`);
-  };
 
   return (
     <header className="bg-white shadow-lg">
@@ -22,7 +19,7 @@ const Header = () => {
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2">
             <Wind className="w-8 h-8 text-blue-500" />
-            <h1 className="text-2xl font-bold text-gray-800">
+            <h1 className="text-2xl font-bold text-gray-800"> 
               Air Quality Dashboard
             </h1>
           </Link> 
@@ -47,8 +44,8 @@ const Header = () => {
             </Link>
           </nav>
 
-          <button
-            onClick={handleLocationClick}
+          <Link
+            to="/search-page"
             className="flex items-center gap-2 bg-blue-50 hover:bg-blue-100 px-4 py-2 rounded-lg transition-colors cursor-pointer group"
           >
             <MapPin className="h-5 w-5 text-blue-500 group-hover:text-blue-600" />
@@ -56,7 +53,7 @@ const Header = () => {
               {city}, {state}, {country}
             </span>
             <Navigation className="h-4 w-4 text-gray-500 group-hover:text-gray-700" />
-          </button>
+          </Link>
         </div>
       </div>
     </header>

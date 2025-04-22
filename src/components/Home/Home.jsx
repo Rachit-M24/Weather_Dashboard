@@ -515,8 +515,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 p-4 md:p-8">
-      {/* <div className="max-w-7xl mx-auto space-y-6"> */}
-
+    
       {/* Main Content Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Left Column */}
@@ -527,17 +526,12 @@ const Home = () => {
               <Line data={chartData} options={chartOptions} />
             </div>
           </div>
-          {/* AQI Gauge and Weather */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h2 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
                 <Gauge className="w-5 h-5 text-blue-500" />
                 Current Air Quality
               </h2>
-              {/* <div className="h-48">
-                <AQIGauge value={currentAQI} />
-              </div>
-              <div className="mt-4 text-center"> */}
               <p
                 className="text-lg font-medium"
                 style={{ color: aqiStatus.color }}
@@ -747,7 +741,7 @@ const Home = () => {
             </h2>
             <div className="space-y-3">
               {[0, 51, 101, 151, 201, 301].map((min, index) => {
-                const range = getAQICategory(min + 25); // Get middle of range
+                const range = getAQICategory(min + 25); 
                 const max =
                   index < 5 ? [51, 101, 151, 201, 301, 500][index] : 500;
                 return (
@@ -777,8 +771,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
-      {/* </div> */}
+      </div>      
     </div>
   );
 };
